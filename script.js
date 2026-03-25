@@ -37,6 +37,34 @@ document.querySelectorAll('.section-hidden').forEach(section => {
     observer.observe(section);
 });
 
+// Accordion Logic for List Cards
+document.querySelectorAll('.toggle-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const card = header.closest('.list-card');
+        const details = card.querySelector('.card-details');
+        const chevron = header.querySelector('.chevron');
+        
+        card.classList.toggle('open');
+        details.classList.toggle('open');
+        chevron.classList.toggle('open');
+    });
+});
+
+// Accordion Logic for Project Cards
+document.querySelectorAll('.toggle-project').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const info = btn.closest('.project-info');
+        const details = info.querySelector('.card-details');
+        
+        details.classList.toggle('open');
+        if (details.classList.contains('open')) {
+            btn.innerText = 'Show Less';
+        } else {
+            btn.innerText = 'Read More';
+        }
+    });
+});
+
 // Simple form submit animation (prevents actual reload)
 document.querySelector('.contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
