@@ -17,9 +17,11 @@
         <nav class="glass-nav">
             <a href="#home" class="logo">Abhishek Mourya</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Experience & Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -35,14 +37,14 @@
             <h1 class="gradient-text">Hi, I'm Abhishek Mourya</h1>
             <h2>Water Resource Engineer</h2>
             <p>I specialize in hydrological modeling, flood risk analysis, and leveraging Python & machine learning to solve complex water engineering challenges.</p>
-            <a href="#projects" class="btn primary-btn">Explore My Work</a>
+            <a href="#experience" class="btn primary-btn">Explore My Work</a>
         </section>
 
         <section id="about" class="about section-hidden">
             <div class="glass-container about-content">
                 <h3 class="section-title">About Me</h3>
                 <p>Hello! I'm Abhishek, an M.Tech graduate in Water Resource and Hydraulics from IIT Kanpur. I am passionate about utilizing tools like HEC-RAS, ArcGIS, and Python to conduct 1-D/2-D hydraulic analysis and develop scenario-based adaptation strategies. My work integrates civil engineering with data-driven decision-making.</p>
-                <div class="skills">
+                <div class="skills" style="margin-top: 2rem;">
                     <span class="skill-pill">Python & ML</span>
                     <span class="skill-pill">HEC-RAS & HMS</span>
                     <span class="skill-pill">ArcGIS & QGIS</span>
@@ -53,35 +55,142 @@
             </div>
         </section>
 
+        <section id="education" class="section-hidden">
+            <h3 class="section-title text-center">Educational Qualification</h3>
+            <div class="list-grid">
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>M.Tech, Water Resource and Hydraulics</h4>
+                            <div class="org">Indian Institute of Technology, Kanpur</div>
+                        </div>
+                        <div class="date">2024 | CPI: 8.93/10</div>
+                    </div>
+                </div>
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>B.Tech, Civil Engineering</h4>
+                            <div class="org">Rajkiya Engineering College, Kannauj</div>
+                        </div>
+                        <div class="date">2021 | CPI: 8.74/10</div>
+                    </div>
+                </div>
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>Class XII & Class X (CBSE)</h4>
+                            <div class="org">Radha Madhav Public School, Bareilly</div>
+                        </div>
+                        <div class="date">2017 & 2015</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-hidden">
+            <h3 class="section-title text-center">Work Experience</h3>
+            <div class="list-grid">
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>Flood Risk Analysis, JSW & ITC</h4>
+                            <div class="org">RMSI</div>
+                        </div>
+                        <div class="date">Jan'26 - Mar'26 & Jun'25 - Feb'26</div>
+                    </div>
+                    <ul>
+                        <li>Performed hydrological modeling using HEC-HMS to delineate catchments and stream networks.</li>
+                        <li>Developed HEC-RAS model setup and conducted Rain-on-Grid hydraulic modeling.</li>
+                        <li>Developed Python scripts to process 30 years of temperature data.</li>
+                    </ul>
+                </div>
+
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>REWARD Project</h4>
+                            <div class="org">RMSI</div>
+                        </div>
+                        <div class="date">Aug'25 - Present</div>
+                    </div>
+                    <ul>
+                        <li>Developed machine learning models to simulate and predict water balance flux components.</li>
+                        <li>Assessed plot-level crop suitability and recommended optimal NPK fertilizer dosages.</li>
+                        <li>Developed Python scripts incorporating SQL queries to extract data from PostgreSQL.</li>
+                    </ul>
+                </div>
+
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>Ground Water Recharge</h4>
+                            <div class="org">Clear Water Dynamics</div>
+                        </div>
+                        <div class="date">Mar'25 - Jun'25</div>
+                    </div>
+                    <ul>
+                        <li>Performed Watershed Delineation and digitized existing canals, rivers, and ditches for PCSWMM.</li>
+                        <li>Conducted rainfall and runoff modelling using PCSWMM.</li>
+                    </ul>
+                </div>
+
+                <div class="list-card glass-container">
+                    <div class="list-card-header">
+                        <div>
+                            <h4>Flood Risk Assessment</h4>
+                            <div class="org">Walter P Moore</div>
+                        </div>
+                        <div class="date">Aug'24 - Jan'25</div>
+                    </div>
+                    <ul>
+                        <li>Performed 1-D Hydraulic Analysis using the Estimated Flows and Normal Depth Calculator.</li>
+                        <li>Prepared comprehensive Flood Risk Assessment reports detailing Hydrological Analyses.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects section-hidden">
-            <h3 class="section-title text-center">Work Experience & Projects</h3>
+            <h3 class="section-title text-center">Key Projects</h3>
             <div class="project-grid">
                 <!-- Project 1 -->
                 <div class="project-card glass-container">
                     <div class="project-img placeholder-1"></div>
                     <div class="project-info">
-                        <h4>Flood Risk Analysis</h4>
-                        <p>Developed HEC-RAS Rain-on-Grid models and Python scripts to assess flood dynamics and evaluate temperature trends for JSW & ITC.</p>
-                        <a href="#" class="btn hidden-btn">RMSI</a>
+                        <h4>Surface Runoff ML Model</h4>
+                        <p>M.Tech thesis predicting surface runoff using factors like LULC, rainfall, and temperature, achieving 86% accuracy with Python.</p>
+                        <a href="#" class="btn hidden-btn">Details</a>
                     </div>
                 </div>
                 <!-- Project 2 -->
                 <div class="project-card glass-container">
-                    <div class="project-img placeholder-2"></div>
+                    <div class="project-img placeholder-3"></div>
                     <div class="project-info">
-                        <h4>Surface Runoff ML Model</h4>
-                        <p>M.Tech thesis predicting surface runoff using factors like LULC, rainfall, and temperature, achieving 86% accuracy with Python.</p>
-                        <a href="#" class="btn hidden-btn">IIT Kanpur</a>
+                        <h4>Bucket Models Hydrology</h4>
+                        <p>Developed model to compute essential Hydrological parameters in the Musiri catchment area, achieving an NSE value of 85%.</p>
+                        <a href="#" class="btn hidden-btn">Details</a>
                     </div>
                 </div>
                 <!-- Project 3 -->
                 <div class="project-card glass-container">
-                    <div class="project-img placeholder-3"></div>
+                    <div class="project-img placeholder-2"></div>
                     <div class="project-info">
-                        <h4>Godrej & DMart Projects</h4>
-                        <p>Performed 1-D Hydraulic Analysis using Rational Method and ArcGIS to provide effective flood mitigation strategies.</p>
-                        <a href="#" class="btn hidden-btn">Walter P Moore</a>
+                        <h4>Decision Support System</h4>
+                        <p>Developed DSS at the plot level across micro-watersheds to support water resource planning and allocation strategies.</p>
+                        <a href="#" class="btn hidden-btn">Details</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section-hidden">
+            <h3 class="section-title text-center">Publications</h3>
+            <div class="list-grid">
+                <div class="list-card glass-container" style="text-align: center; justify-content: center; min-height: 150px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">
+                        <i>Information on the latest publications and research papers will be updated here soon.</i>
+                    </p>
                 </div>
             </div>
         </section>
