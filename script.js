@@ -27,6 +27,13 @@ const observer = new IntersectionObserver((entries, observer) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('section-visible');
             entry.target.classList.remove('section-hidden');
+            
+            // Trigger staggered children
+            const revealItems = entry.target.querySelectorAll('.reveal-item');
+            revealItems.forEach(item => {
+                item.classList.add('visible');
+            });
+
             // Stop observing once visible
             observer.unobserve(entry.target);
         }
