@@ -241,14 +241,38 @@ section {
 }
 
 .primary-btn {
-    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 114, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .primary-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+    border-color: rgba(0, 255, 255, 0.4);
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.secondary-btn {
+    background: rgba(15, 23, 42, 0.5); /* Dark translucent glass */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.secondary-btn:hover {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: #fff;
+    transform: translateY(-4px) scale(1.05);
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* About Section */
