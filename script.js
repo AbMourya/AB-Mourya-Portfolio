@@ -57,19 +57,72 @@ document.querySelectorAll('.toggle-header').forEach(header => {
     });
 });
 
-// Accordion Logic for Project Cards
+// Project Details Modal Interaction (Gini Effect)
+const modalOverlay = document.getElementById('project-modal-overlay');
+const modalBody = document.getElementById('modal-body');
+const closeModal = document.getElementById('close-modal');
+
 document.querySelectorAll('.toggle-project').forEach(btn => {
     btn.addEventListener('click', () => {
-        const info = btn.closest('.project-info');
-        const details = info.querySelector('.card-details');
+        const card = btn.closest('.project-card');
+        const title = card.querySelector('h4').innerText;
+        const orgElement = card.querySelector('p[style*="font-weight: 700"]');
+        const org = orgElement ? orgElement.innerText : "";
+        const details = card.querySelector('.card-details').innerHTML;
+
+        // Construct Modal Content
+        modalBody.innerHTML = `
+            <div class="project-info" style="padding: 0; text-align: left;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">${title}</h3>
+                <p style="color: var(--accent-1); font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem;">${org}</p>
+                <div class="card-details-modal">
+                    ${details}
+                </div>
+            </div>
+        `;
+
+        // Apple-style Genie: Calculate origin from the clicked button
+        const rect = btn.getBoundingClientRect();
+        const originX = rect.left + rect.width / 2;
+        const originY = rect.top + rect.height / 2;
+        const modalContent = modalOverlay.querySelector('.modal-content');
         
-        details.classList.toggle('open');
-        if (details.classList.contains('open')) {
-            btn.innerText = 'Show Less';
-        } else {
-            btn.innerText = 'Read More';
-        }
+        // Set dynamic origin
+        modalContent.style.transformOrigin = `${originX}px ${originY}px`;
+
+        // Reset scroll and show modal
+        modalContent.scrollTop = 0;
+        modalOverlay.style.display = 'flex';
+        
+        // Trigger expansion with small delay to ensure origin is set
+        setTimeout(() => {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }, 10);
     });
+});
+
+// Close Modal Logic
+const closeProjectModal = () => {
+    modalOverlay.classList.remove('active');
+    setTimeout(() => {
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore background scroll
+    }, 300); // Wait for transition
+};
+
+if (closeModal) closeModal.addEventListener('click', closeProjectModal);
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeProjectModal();
+    });
+}
+
+// Handle ESC key to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+        closeProjectModal();
+    }
 });
 
 // Simple form submit animation (prevents actual reload)
